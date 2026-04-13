@@ -9,9 +9,9 @@ using VRage;
 using VRage.Game;
 using VRage.Game.Entity;
 
-namespace AutoRemoveSilicone
+namespace AutoRemoveSilicon
 {
-	public static class SiliconeRemover
+	public static class SiliconRemover
 	{
 		public static void EnableMode(Mode voidMode = Mode.Off)
 		{
@@ -51,9 +51,9 @@ namespace AutoRemoveSilicone
 					{
 						for (int j = 0; j < items.Count; j++)
 						{
-							if (VoidMode == Mode.Silicone )
+							if (VoidMode == Mode.Silicon )
 							{
-								if (items[j].Content.TypeId.ToString().Contains("Ingot") && items[j].Content.SubtypeName.Contains("Silicone"))
+								if (items[j].Content.TypeId.ToString().Contains("Ingot") && items[j].Content.SubtypeName.Contains("Silicon"))
 								{
 									inventory.RemoveItemsAt(inventory.GetItemIndexById(items[j].ItemId), new MyFixedPoint?(items[j].Amount));
 									break;
@@ -74,7 +74,7 @@ namespace AutoRemoveSilicone
 		public enum Mode
     	{
 			Off,
-			Silicone
+			Silicon
 
        	};
 	}

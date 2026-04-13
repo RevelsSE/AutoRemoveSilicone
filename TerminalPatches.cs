@@ -7,30 +7,30 @@ using System.Reflection.Emit;
 using System.Text;
 using VRage.Utils;
 
-namespace AutoRemoveSilicone
+namespace AutoRemoveSilicon
 {
     [HarmonyPatch]
 	public class TerminalPatches
 	{
 		public static void ShipDrillControls()
 		{
-			MyTerminalControlOnOffSwitch<MyShipDrill> myTerminalControlOnOffSwitch = new MyTerminalControlOnOffSwitch<MyShipDrill>("AutoVoidSilicone", MyStringId.GetOrCompute("Void Silicone"));
-			myTerminalControlOnOffSwitch.Getter = (MyShipDrill x) => SiliconeRemover.Enabled && StiliconeRemover.VoidMode == SiliconeRemover.Mode.Silicone;
+			MyTerminalControlOnOffSwitch<MyShipDrill> myTerminalControlOnOffSwitch = new MyTerminalControlOnOffSwitch<MyShipDrill>("AutoVoidSilicon", MyStringId.GetOrCompute("Void Silicon"));
+			myTerminalControlOnOffSwitch.Getter = (MyShipDrill x) => SiliconRemover.Enabled && StiliconRemover.VoidMode == SiliconRemover.Mode.Silicon;
 			myTerminalControlOnOffSwitch.Setter = delegate (MyShipDrill x, bool v)
 			{
-				SiliconeRemover.EnableMode(SiliconeRemover.Mode.Silicone);
+				SiliconRemover.EnableMode(SiliconRemover.Mode.Silicon);
 			};
 			myTerminalControlOnOffSwitch.DynamicTooltipGetter = delegate (MyShipDrill drill)
 			{
-				return $"Toggle voiding of silicone.";
+				return $"Toggle voiding of silicon.";
 			};
 			myTerminalControlOnOffSwitch.SupportsMultipleBlocks = false;
 			MyTerminalControlFactory.AddControl<MyShipDrill>(myTerminalControlOnOffSwitch);
-			MyTerminalAction<MyShipDrill> myTerminalAction = new MyTerminalAction<MyShipDrill>("VoidSilicone", new StringBuilder("Toggle Silicone voiding"), "");
-			myTerminalAction.Action = delegate (MyShipDrill x) { SiliconeRemover.EnableMode(SiliconeRemover.Mode.Silicone); } ;
+			MyTerminalAction<MyShipDrill> myTerminalAction = new MyTerminalAction<MyShipDrill>("VoidSilicon", new StringBuilder("Toggle Silicon voiding"), "");
+			myTerminalAction.Action = delegate (MyShipDrill x) { SiliconRemover.EnableMode(SiliconRemover.Mode.Silicon); } ;
 			myTerminalAction.Writer = delegate (MyShipDrill block, StringBuilder builder)
 			{
-				builder.Append($"{SiliconeRemover.VoidMode} {SiliconeRemover.Counter / 10:N0}");
+				builder.Append($"{SiliconRemover.VoidMode} {SiliconRemover.Counter / 10:N0}");
 			};
 			myTerminalAction.ValidForGroups = false;
 			MyTerminalControlFactory.AddAction<MyShipDrill>(myTerminalAction);
