@@ -7,8 +7,8 @@
     <ProjectGuid>{C9A17C33-1A36-4675-A0D2-35B1139991F8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutoRemoveStone</RootNamespace>
-    <AssemblyName>AutoRemoveStone</AssemblyName>
+    <RootNamespace>AutoRemoveSilicone</RootNamespace>
+    <AssemblyName>AutoRemoveSilicone</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -116,7 +116,7 @@
   <ItemGroup>
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StoneRemover.cs" />
+    <Compile Include="SiliconeRemover.cs" />
     <Compile Include="TerminalPatches.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

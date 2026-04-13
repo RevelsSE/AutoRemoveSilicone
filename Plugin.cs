@@ -3,7 +3,7 @@ using System.Reflection;
 using HarmonyLib;
 using VRage.Plugins;
 
-namespace AutoRemoveStone
+namespace AutoRemoveSilicone
 {
 	public class Plugin : IDisposable, IPlugin
 	{
@@ -13,7 +13,7 @@ namespace AutoRemoveStone
 
 		public void Init(object gameInstance)
 		{
-			new Harmony("AutoRemoveStone").PatchAll(Assembly.GetExecutingAssembly());
+			new Harmony("AutoRemoveSilicone").PatchAll(Assembly.GetExecutingAssembly());
 		}
 
 		public void Update()

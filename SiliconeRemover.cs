@@ -9,9 +9,9 @@ using VRage;
 using VRage.Game;
 using VRage.Game.Entity;
 
-namespace AutoRemoveStone
+namespace AutoRemoveSilicone
 {
-	public static class StoneRemover
+	public static class SiliconeRemover
 	{
 		public static void EnableMode(Mode voidMode = Mode.Off)
 		{
@@ -51,21 +51,15 @@ namespace AutoRemoveStone
 					{
 						for (int j = 0; j < items.Count; j++)
 						{
-							if (VoidMode == Mode.Stone || VoidMode == Mode.Both)
+							if (VoidMode == Mode.Silicone )
 							{
-								if (items[j].Content.TypeId.ToString().Contains("Ore") && items[j].Content.SubtypeName.Contains("Stone"))
+								if (items[j].Content.TypeId.ToString().Contains("Ingot") && items[j].Content.SubtypeName.Contains("Silicone"))
 								{
 									inventory.RemoveItemsAt(inventory.GetItemIndexById(items[j].ItemId), new MyFixedPoint?(items[j].Amount));
 									break;
 								}
 							}
-							if (VoidMode == Mode.Ice || VoidMode == Mode.Both)
-							{
-								if (items[j].Content.TypeId.ToString().Contains("Ore") && items[j].Content.SubtypeName.Contains("Ice"))
-								{
-									inventory.RemoveItemsAt(inventory.GetItemIndexById(items[j].ItemId), new MyFixedPoint?(items[j].Amount));
-								}
-							}
+
 						}
 					}
 				}
@@ -78,11 +72,10 @@ namespace AutoRemoveStone
 		public static Mode VoidMode { get; private set; } = Mode.Off;
 		public static int Counter { get; private set; } = 0;
 		public enum Mode
-        	{
+    	{
 			Off,
-			Stone,
-			Ice,
-			Both
-        	};
+			Silicone
+
+       	};
 	}
 }
