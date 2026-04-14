@@ -15,7 +15,7 @@ namespace AutoRemoveSilicon
 		public static void ShipDrillControls()
 		{
 			MyTerminalControlOnOffSwitch<MyShipDrill> myTerminalControlOnOffSwitch = new MyTerminalControlOnOffSwitch<MyShipDrill>("AutoVoidSilicon", MyStringId.GetOrCompute("Void Silicon"));
-			myTerminalControlOnOffSwitch.Getter = (MyShipDrill x) => SiliconRemover.Enabled && StiliconRemover.VoidMode == SiliconRemover.Mode.Silicon;
+			myTerminalControlOnOffSwitch.Getter = (MyShipDrill x) => SiliconRemover.Enabled && SiliconRemover.VoidMode == SiliconRemover.Mode.Silicon;
 			myTerminalControlOnOffSwitch.Setter = delegate (MyShipDrill x, bool v)
 			{
 				SiliconRemover.EnableMode(SiliconRemover.Mode.Silicon);
